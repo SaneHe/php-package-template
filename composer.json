@@ -1,0 +1,54 @@
+{
+    "name": "jing/composer-package-template",
+    "description": "composer 包模板项目",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Jing\\ComposerPackageTemplate\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "JingDigital",
+            "email": "jing@JingDigital.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.0"
+    },
+    "require-dev": {
+        "brainmaestro/composer-git-hooks": "^2.8",
+        "friendsofphp/php-cs-fixer": "^3.0",
+        "mockery/mockery": "^1.2",
+        "phpunit/phpunit": "^9.0",
+        "jetbrains/phpstorm-attributes": "^1.0"
+    },
+    "extra": {
+        "hooks": {
+            "pre-commit": [
+                "composer check-style",
+                "composer test"
+            ],
+            "pre-push": [
+                "composer test",
+                "composer check-style"
+            ]
+        }
+    },
+    "scripts": {
+        "post-update-cmd": [
+        ],
+        "post-merge": "composer install",
+        "post-install-cmd": [
+        ],
+        "check-style": "php-cs-fixer fix --using-cache=no --diff --dry-run --ansi",
+        "fix-style": "php-cs-fixer fix --using-cache=no --ansi",
+        "test": "phpunit --colors",
+    },
+    "scripts-descriptions": {
+        "test": "Run all tests.",
+        "check-style": "Run style checks (only dry run - no fixing!).",
+        "fix-style": "Run style checks and fix violations."
+    }
+}
