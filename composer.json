@@ -1,28 +1,33 @@
 {
-    "name": "jing/composer-package-template",
+    "name": "sane/feature-template",
     "description": "composer 包模板项目",
     "type": "library",
     "autoload": {
         "psr-4": {
-            "Jing\\ComposerPackageTemplate\\": "src/"
+            "Sane\\Feature\\": "src/"
         }
     },
     "authors": [
         {
-            "name": "JingDigital",
-            "email": "jing@JingDigital.com"
+            "name": "sane",
+            "email": "374023109@qq.com"
         }
     ],
     "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
         "php": ">=7.0"
     },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    },
     "require-dev": {
-        "brainmaestro/composer-git-hooks": "^2.8",
-        "friendsofphp/php-cs-fixer": "^3.0",
         "mockery/mockery": "^1.2",
-        "phpunit/phpunit": "^9.0",
-        "jetbrains/phpstorm-attributes": "^1.0"
+        "phpunit/phpunit": ">=7.0",
+        "friendsofphp/php-cs-fixer": "^3.0",
+        "jetbrains/phpstorm-attributes": "^1.0",
+        "brainmaestro/composer-git-hooks": "^2.8"
     },
     "extra": {
         "hooks": {
@@ -44,7 +49,7 @@
         ],
         "check-style": "php-cs-fixer fix --using-cache=no --diff --dry-run --ansi",
         "fix-style": "php-cs-fixer fix --using-cache=no --ansi",
-        "test": "phpunit --colors",
+        "test": "phpunit --colors"
     },
     "scripts-descriptions": {
         "test": "Run all tests.",

@@ -5,5 +5,5 @@ A template repository for PHP package.
 ## Installing
 
 ```shell
-$ composer require vendor/package -vvv
+$ composer require sane/package -vvv
 ```
