@@ -2,25 +2,30 @@
     "name": "sane/feature-template",
     "description": "composer 包模板项目",
     "type": "library",
-    "autoload": {
-        "psr-4": {
-            "Sane\\Feature\\": "src/"
-        }
-    },
     "authors": [
         {
             "name": "sane",
             "email": "374023109@qq.com"
         }
     ],
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "Sane\\Feature\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Sane\\Feature\\Tests\\": "tests/"
+        }
+    },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
         "php": ">=7.0"
-    },
-    "config": {
-        "optimize-autoloader": true,
-        "sort-packages": true
     },
     "require-dev": {
         "mockery/mockery": "^1.2",
@@ -41,6 +46,7 @@
             ]
         }
     },
+    "license": "MIT",
     "scripts": {
         "post-update-cmd": [
         ],
